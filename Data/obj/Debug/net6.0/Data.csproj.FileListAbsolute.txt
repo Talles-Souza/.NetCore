@@ -1,0 +1,15 @@
+C:\C#\ApiCourseTwo\Data\bin\Debug\net6.0\Data.deps.json
+C:\C#\ApiCourseTwo\Data\bin\Debug\net6.0\Data.dll
+C:\C#\ApiCourseTwo\Data\bin\Debug\net6.0\Data.pdb
+C:\C#\ApiCourseTwo\Data\bin\Debug\net6.0\Domain.dll
+C:\C#\ApiCourseTwo\Data\bin\Debug\net6.0\Domain.pdb
+C:\C#\ApiCourseTwo\Data\obj\Debug\net6.0\Data.csproj.AssemblyReference.cache
+C:\C#\ApiCourseTwo\Data\obj\Debug\net6.0\Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\C#\ApiCourseTwo\Data\obj\Debug\net6.0\Data.AssemblyInfoInputs.cache
+C:\C#\ApiCourseTwo\Data\obj\Debug\net6.0\Data.AssemblyInfo.cs
+C:\C#\ApiCourseTwo\Data\obj\Debug\net6.0\Data.csproj.CoreCompileInputs.cache
+C:\C#\ApiCourseTwo\Data\obj\Debug\net6.0\Data.csproj.CopyComplete
+C:\C#\ApiCourseTwo\Data\obj\Debug\net6.0\Data.dll
+C:\C#\ApiCourseTwo\Data\obj\Debug\net6.0\refint\Data.dll
+C:\C#\ApiCourseTwo\Data\obj\Debug\net6.0\Data.pdb
+C:\C#\ApiCourseTwo\Data\obj\Debug\net6.0\ref\Data.dll
