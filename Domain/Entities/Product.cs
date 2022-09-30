@@ -1,15 +1,8 @@
 ﻿using Domain.Validations;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Reflection.Metadata;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.Entities
 {
-    internal sealed class  Product
+    public sealed class  Product
     {
         public int Id { get; private  set; }
         public string Name { get; private   set; }

@@ -1,18 +1,10 @@
 ﻿using Domain.Validations;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Security.AccessControl;
-using System.Text;
-using System.Threading.Tasks;
-using System.Xml.Linq;
 
 namespace Domain.Entities
 {
-    
 
-   internal class Purchases
+
+    public class Purchases
     {
 
         public int Id { get; private set; }

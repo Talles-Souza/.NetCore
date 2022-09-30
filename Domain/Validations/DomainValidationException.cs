@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Domain.Validations
 {
     //Classe de validação genérica
-    internal class DomainValidationException:Exception
+    public class DomainValidationException:Exception
     {
         public DomainValidationException(string error):base(error)
         {
