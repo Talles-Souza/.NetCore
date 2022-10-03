@@ -19,6 +19,10 @@ namespace Data.Maps
             builder.Property(x => x.PersonId).HasColumnName("IdPerson");
             builder.Property(x => x.ProductId).HasColumnName("IdProduct");
             builder.Property(x => x.Date).HasColumnName("DataPurchase");
+
+            //como estamos na claase "compra" começamos pelos atributos que estao dentro
+            builder.HasOne(x => x.Person).WithMany(x=>x.Purchases); 
+            builder.HasOne(x => x.Product).WithMany(x=>x.Purchases); 
         }
     }
 }
