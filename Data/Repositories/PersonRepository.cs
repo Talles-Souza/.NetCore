@@ -2,11 +2,6 @@
 using Domain.Entities;
 using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Data.Repositories
 {
@@ -18,9 +13,6 @@ namespace Data.Repositories
         {
             _db = db ?? throw new ArgumentNullException(nameof(db));
         }
-
-
-
         public async Task<ICollection<Person>> FindByAll()
         {
             List<Person> people = await _db.People.ToListAsync();
@@ -46,8 +38,6 @@ namespace Data.Repositories
             return person;
 
         }
-
-
         public async Task<bool> Delete(int id)
         {
             try
