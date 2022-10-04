@@ -1,13 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "KJ9yIOnqA5FUkJ2+CmaWWUxjCF73jdrtPnUk6WTuxEnk0QLL+RM4D3+tiIwqy/FB6YtiJUePFvBK2L9XBZmRQA==",
+  "dgSpecHash": "H+BD95HnKWS2k6d4Fq12pndLjcn0+oLw4vVuhEl4eixoWwPlw9BRR6zBbi0nZoE8wJM9BkkmdVt5HuYY+20xHQ==",
   "success": true,
   "projectFilePath": "C:\\C#\\ApiCourseTwo\\IoC\\IoC.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\talles\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
-    "C:\\Users\\talles\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\talles\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.9\\microsoft.entityframeworkcore.6.0.9.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.9\\microsoft.entityframeworkcore.abstractions.6.0.9.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\6.0.9\\microsoft.entityframeworkcore.analyzers.6.0.9.nupkg.sha512",
