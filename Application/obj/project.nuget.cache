@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "xwuuqhE/jJRlOcxxmeRPDa+SckKQutRvjd9J5f+wGzoaGFPOqxDdqyf8M1NdQKhy5+vSkr3WePrVDdTUhlQDZQ==",
+  "dgSpecHash": "jaZf0xGhIV6yKjOdEjNeSPaztEmaXDQS7drqpZFVovaKeaJAt8wXR+2JgENkmnJG+pjq3uCSukZOg7STVDhZwg==",
   "success": true,
   "projectFilePath": "C:\\C#\\ApiCourseTwo\\Application\\Application.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\talles\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512"
+  ],
   "logs": []
 }
