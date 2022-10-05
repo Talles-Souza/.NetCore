@@ -12,13 +12,13 @@ namespace Data.Maps
         public void Configure(EntityTypeBuilder<Purchases> builder)
         {
 
-            builder.ToTable("Purchases");
+            builder.ToTable("purchases");
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Id).HasColumnName("Idpuerchase").UseIdentityColumn();
-            builder.Property(x => x.PersonId).HasColumnName("Idperson");
-            builder.Property(x => x.ProductId).HasColumnName("Idproduct");
-            builder.Property(x => x.Date).HasColumnName("Datapurchase");
+            builder.Property(x => x.Id).HasColumnName("idpuerchase").UseIdentityColumn();
+            builder.Property(x => x.PersonId).HasColumnName("idperson");
+            builder.Property(x => x.ProductId).HasColumnName("idproduct");
+            builder.Property(x => x.Date).HasColumnName("datapurchase");
 
             //como estamos na claase "compra" começamos pelos atributos que estao dentro
             builder.HasOne(x => x.Person).WithMany(x=>x.Purchases); 

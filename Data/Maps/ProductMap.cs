@@ -8,13 +8,13 @@ namespace Data.Maps
     {
         public void Configure(EntityTypeBuilder<Product> builder)
         {
-            builder.ToTable("Product");
+            builder.ToTable("product");
             builder.HasKey(x => x.Id);
             
-            builder.Property(x => x.Id).HasColumnName("Idproduct").UseIdentityColumn();  
-            builder.Property(x => x.Name).HasColumnName("Name");    
-            builder.Property(x => x.Cod).HasColumnName("Cod");    
-            builder.Property(x => x.Price).HasColumnName("Price");
+            builder.Property(x => x.Id).HasColumnName("idproduct").UseIdentityColumn();  
+            builder.Property(x => x.Name).HasColumnName("name");    
+            builder.Property(x => x.Cod).HasColumnName("cod");    
+            builder.Property(x => x.Price).HasColumnName("price");
             builder.HasMany(x => x.Purchases).WithOne(prop => prop.Product).HasForeignKey(x => x.ProductId);
 
 
