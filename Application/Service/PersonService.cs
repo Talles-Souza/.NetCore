@@ -28,5 +28,18 @@ namespace Application.Service
             return ResultService.Ok(_mapper.Map<PersonDTO>(data));
 
         }
+
+        public async Task<ResultService<ICollection<PersonDTO>>> FindByAll()
+        {
+            var people = await _personRepository.FindByAll();
+            return ResultService.Ok<ICollection<PersonDTO>>(_mapper.Map<ICollection<PersonDTO>>(people));
+        }
+
+        public async Task<ResultService<PersonDTO>> FindById(int id)
+        {
+            var person = await _personRepository.FindById(id);
+            if (person == null) return ResultService.Fail<PersonDTO>("Person not found");
+            return ResultService.Ok(_mapper.Map<PersonDTO>(person));
+        }
     }
 }
