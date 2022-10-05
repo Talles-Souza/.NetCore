@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Jy85ZPZJjS6TaOlaxYr0j62/EsmyT04scymzLlcDx/8bZJplBlBQ7kDj57aacU4lPDAwBxdhxnElrQcjAmdyfA==",
+  "dgSpecHash": "M1Es6NudSRiuCITHTFAj8+BKhV7tvGjKlHLIpTlbyEeOiqWhIVD7HQ78UvW3AWkah+9b1VJxGZmovLYqTUTifg==",
   "success": true,
   "projectFilePath": "C:\\C#\\ApiCourseTwo\\IoC\\IoC.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\talles\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
+    "C:\\Users\\talles\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

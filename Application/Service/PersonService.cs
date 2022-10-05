@@ -6,7 +6,7 @@ using Domain.Repositories;
 
 namespace Application.Service
 {
-    internal class PersonService : IPersonService
+    public class PersonService : IPersonService
     {
         private readonly IPersonRepository _personRepository;
         private readonly IMapper _mapper;

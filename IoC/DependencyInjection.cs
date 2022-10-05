@@ -1,15 +1,12 @@
-﻿using Data.Context;
+﻿using Application.Mapping;
+using Application.Service.Interfaces;
+using Application.Service;
+using Data.Context;
 using Data.Repositories;
 using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace IoC
 {
@@ -21,6 +18,13 @@ namespace IoC
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IProductRepository,ProductRepository>(); 
             return services;
+        }
+        public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddAutoMapper(typeof(DomainToDtoMapping));
+            services.AddScoped<IPersonService, PersonService>();
+            return services;
+
         }
     }
 }
