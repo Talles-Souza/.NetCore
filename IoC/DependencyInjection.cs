@@ -14,7 +14,7 @@ namespace IoC
     {
         public static IServiceCollection AddInfrastruture(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddDbContext<ContextDb>(options => options.UseNpgsql(configuration.GetConnectionString("")));
+            services.AddDbContext<ContextDb>(options => options.UseNpgsql(configuration.GetConnectionString("DefaultConnection")));
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IProductRepository,ProductRepository>(); 
             return services;

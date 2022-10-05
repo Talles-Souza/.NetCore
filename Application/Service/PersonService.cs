@@ -10,7 +10,14 @@ namespace Application.Service
     {
         private readonly IPersonRepository _personRepository;
         private readonly IMapper _mapper;
-        public async Task<ResultService<PersonDTO>> Create(PersonDTO personDTO)
+
+        public PersonService(IPersonRepository personRepository, IMapper mapper)
+        {
+            _personRepository = personRepository;
+            _mapper = mapper;
+        }
+
+        public async Task<ResultService<PersonDTO>> Create( PersonDTO personDTO)
         {
             
             if(personDTO == null) return ResultService.Fail<PersonDTO>("Object must be informed");    
@@ -18,7 +25,7 @@ namespace Application.Service
             if (!result.IsValid) return ResultService.RequestError<PersonDTO>("Problems in valdiation", result);
             var person = _mapper.Map<Person>(personDTO);
             var data = await _personRepository.Create(person);
-            return ResultService.Ok<PersonDTO>(_mapper.Map<PersonDTO>(data));
+            return ResultService.Ok(_mapper.Map<PersonDTO>(data));
 
         }
     }

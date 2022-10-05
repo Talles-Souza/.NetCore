@@ -9,12 +9,12 @@ namespace Data.Maps
         public void Configure(EntityTypeBuilder<Person> builder)
         {
             //mapeado
-            builder.ToTable("Person");
+            builder.ToTable("person");
             builder.HasKey(x => x.Id);
-            builder.Property(x=>x.Id).HasColumnName("Idperson").UseIdentityColumn();
-            builder.Property(x => x.Document).HasColumnName("Document");
-            builder.Property(x => x.Name).HasColumnName("Name");
-            builder.Property(x => x.Phone).HasColumnName("Phone");
+            builder.Property(x=>x.Id).HasColumnName("idperson").UseIdentityColumn();
+            builder.Property(x => x.Document).HasColumnName("document");
+            builder.Property(x => x.Name).HasColumnName("name");
+            builder.Property(x => x.Phone).HasColumnName("phone");
 
             //tipo de relacionamento
             builder.HasMany(x => x.Purchases).WithOne(x => x.Person).HasForeignKey(x => x.PersonId);
