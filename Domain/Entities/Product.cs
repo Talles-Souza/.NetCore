@@ -13,6 +13,7 @@ namespace Domain.Entities
 
         public Product(string name, string cod, decimal price)
         {
+            Purchases = new List<Purchases>();
             Validation(name, cod, price);
         }
         public Product(int id, string name, string cod, decimal price)
@@ -20,6 +21,7 @@ namespace Domain.Entities
             DomainValidationException.When(id < 0, "Id must be greater than zero");
             Id = id;
             Validation(name, cod, price);
+            Purchases = new List<Purchases>();
         }
 
 

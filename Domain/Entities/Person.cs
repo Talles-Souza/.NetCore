@@ -18,12 +18,15 @@ namespace Domain.Entities
         public Person(string name, string document, string phone)
         {
             Validation(name,document,phone);
+            Purchases = new List<Purchases>();  
         }
         public Person(int id,string name, string document, string phone)
         {
             DomainValidationException.When(id < 0, "Id must be greater than zero");
-            Id=id;  
+            Id=id;
+            Purchases = new List<Purchases>();
             Validation(name,document,phone);
+
         }
 
         private void Validation(string name, string document, string phone)

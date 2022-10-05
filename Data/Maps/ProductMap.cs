@@ -11,7 +11,7 @@ namespace Data.Maps
             builder.ToTable("Product");
             builder.HasKey(x => x.Id);
             
-            builder.Property(x => x.Id).HasColumnName("IdProduct").UseIdentityColumn();  
+            builder.Property(x => x.Id).HasColumnName("Idproduct").UseIdentityColumn();  
             builder.Property(x => x.Name).HasColumnName("Name");    
             builder.Property(x => x.Cod).HasColumnName("Cod");    
             builder.Property(x => x.Price).HasColumnName("Price");

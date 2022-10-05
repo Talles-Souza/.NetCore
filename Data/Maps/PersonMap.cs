@@ -11,7 +11,7 @@ namespace Data.Maps
             //mapeado
             builder.ToTable("Person");
             builder.HasKey(x => x.Id);
-            builder.Property(x=>x.Id).HasColumnName("IdPerson").UseIdentityColumn();
+            builder.Property(x=>x.Id).HasColumnName("Idperson").UseIdentityColumn();
             builder.Property(x => x.Document).HasColumnName("Document");
             builder.Property(x => x.Name).HasColumnName("Name");
             builder.Property(x => x.Phone).HasColumnName("Phone");
