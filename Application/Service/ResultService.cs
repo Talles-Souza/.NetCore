@@ -35,8 +35,12 @@ namespace Application.Service
 
 
         public static ResultService Ok(string message) => new ResultService {IsSuccess = true, Message = message};  
-        public static ResultService<T> Ok<T>(T Data) => new ResultService<T> {IsSuccess = true, Data = Data };  
+        public static ResultService<T> Ok<T>(T Data) => new ResultService<T> {IsSuccess = true, Data = Data };
 
+        internal static ResultService<T> Ok<T>(string v)
+        {
+            throw new NotImplementedException();
+        }
     }
     public class ResultService<T> : ResultService
     {

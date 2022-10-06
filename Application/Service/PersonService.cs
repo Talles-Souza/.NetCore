@@ -35,7 +35,7 @@ namespace Application.Service
             var person = await _personRepository.FindById(id);
             if(person == null) return ResultService.Fail<PersonDTO>("Person not found");
             await _personRepository.Delete(id);
-            return (ResultService<PersonDTO>)ResultService.Ok($"Person with id:{id}  has been deleted");
+            return ResultService.Ok(_mapper.Map<PersonDTO>(person));      
         }
 
         public async Task<ResultService<ICollection<PersonDTO>>> FindByAll()
