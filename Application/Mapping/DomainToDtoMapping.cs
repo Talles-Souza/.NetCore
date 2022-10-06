@@ -14,6 +14,7 @@ namespace Application.Mapping
         public DomainToDtoMapping()
         {
             CreateMap<Person, PersonDTO>();
+            CreateMap<Product, ProductDTO>();
         }
     }
 }
