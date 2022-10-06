@@ -30,12 +30,12 @@ namespace Application.Service
 
         }
 
-        public async Task<ResultService<PersonDTO>> Delete(int id)
+        public async Task<ResultService> Delete(int id)
         {
             var person = await _personRepository.FindById(id);
             if(person == null) return ResultService.Fail<PersonDTO>("Person not found");
             await _personRepository.Delete(id);
-            return ResultService.Ok(_mapper.Map<PersonDTO>(person));      
+            return ResultService.Ok("Person with the id : " + id + " was successfully deleted");      
         }
 
         public async Task<ResultService<ICollection<PersonDTO>>> FindByAll()
