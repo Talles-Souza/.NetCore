@@ -31,5 +31,18 @@ namespace Application.Service
             var data = await _repository.Create(product);
             return ResultService.Ok<ProductDTO>(_mapper.Map<ProductDTO>(data));
         }
+
+        public async Task<ResultService<ICollection<ProductDTO>>> FindByAll()
+        {
+            var products = await _repository.FindByAll();
+            return ResultService.Ok<ICollection<ProductDTO>>(_mapper.Map<ICollection<ProductDTO>>(products));
+        }
+
+        public async Task<ResultService<ProductDTO>> FindById(int id)
+        {
+            var product = await _repository.FindById(id);
+            if (product == null) return ResultService.Fail<ProductDTO>("Product not found");
+            return ResultService.Ok<ProductDTO>(_mapper.Map<ProductDTO>(product));
+        }
     }
 }

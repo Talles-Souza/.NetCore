@@ -10,5 +10,8 @@ namespace Application.Service.Interfaces
     public interface IProductService
     {
         Task<ResultService<ProductDTO>> Create(ProductDTO productDTO);
+        Task<ResultService<ProductDTO>> FindById(int id);
+        Task<ResultService<ICollection<ProductDTO>>> FindByAll();
+        
     }
 }
