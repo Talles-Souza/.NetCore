@@ -13,18 +13,18 @@ namespace Domain.Entities
         public string Name { get; private set; }    
         public string Document { get; private set; }
         public string Phone {get; private set; }
-        public ICollection<Purchases> Purchases { get; set; }
+        public ICollection<Purchase> Purchases { get; set; }
 
         public Person(string name, string document, string phone)
         {
             Validation(name,document,phone);
-            Purchases = new List<Purchases>();  
+            Purchases = new List<Purchase>();  
         }
         public Person(int id,string name, string document, string phone)
         {
             DomainValidationException.When(id < 0, "Id must be greater than zero");
             Id=id;
-            Purchases = new List<Purchases>();
+            Purchases = new List<Purchase>();
             Validation(name,document,phone);
 
         }

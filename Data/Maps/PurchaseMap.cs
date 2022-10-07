@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 namespace Data.Maps
 {
 
-    public class PurchaseMap : IEntityTypeConfiguration<Purchases>
+    public class PurchaseMap : IEntityTypeConfiguration<Purchase>
     {
     
 
-        public void Configure(EntityTypeBuilder<Purchases> builder)
+        public void Configure(EntityTypeBuilder<Purchase> builder)
         {
 
             builder.ToTable("purchases");

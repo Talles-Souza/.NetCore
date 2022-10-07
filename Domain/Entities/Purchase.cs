@@ -4,7 +4,7 @@ namespace Domain.Entities
 {
 
 
-    public class Purchases
+    public class Purchase
     {
 
         public int Id { get; private set; }
@@ -15,10 +15,10 @@ namespace Domain.Entities
         public Product Product { get; set; }
 
 
-        public Purchases(int productId, int personId)
+        public Purchase(int productId, int personId)
         {
             Validation(ProductId, PersonId);
-        } public Purchases(int id ,int productId, int personId)
+        } public Purchase(int id ,int productId, int personId)
         {
             DomainValidationException.When(id < 0, "Id must be informed");
             Id = id;
