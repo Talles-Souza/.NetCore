@@ -12,6 +12,7 @@ namespace Application.Service.Interfaces
         Task<ResultService<ProductDTO>> Create(ProductDTO productDTO);
         Task<ResultService<ProductDTO>> FindById(int id);
         Task<ResultService<ICollection<ProductDTO>>> FindByAll();
-        
+        Task<ResultService> Update(ProductDTO productDTO);  
+        Task<ResultService>  Delete(int id);
     }
 }

@@ -37,5 +37,20 @@ namespace ApiCourseTwo.Controllers
             if (result.IsSuccess) return Ok(result);
             return BadRequest(result);
         }
+
+        [HttpPut]
+        public async Task<ActionResult> Update([FromBody] ProductDTO productDTO)
+        {
+            var result = await _productService.Update(productDTO);
+            if (result.IsSuccess) return Ok(result);
+            return BadRequest(result);
+        }
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> Delete(int id)
+        {
+            var result = await _productService.Delete(id);
+            if (result.IsSuccess) return Ok(result);
+            return BadRequest(result);
+        }
     }
 }

@@ -32,6 +32,14 @@ namespace Application.Service
             return ResultService.Ok<ProductDTO>(_mapper.Map<ProductDTO>(data));
         }
 
+        public async Task<ResultService> Delete(int id)
+        {
+            var product = await _repository.FindById(id);
+            if (product == null) return ResultService.Fail("Product not found");
+            await _repository.Delete(id);
+            return ResultService.Ok($"Product with ID : {id} was delected");
+        }
+
         public async Task<ResultService<ICollection<ProductDTO>>> FindByAll()
         {
             var products = await _repository.FindByAll();
@@ -43,6 +51,18 @@ namespace Application.Service
             var product = await _repository.FindById(id);
             if (product == null) return ResultService.Fail<ProductDTO>("Product not found");
             return ResultService.Ok<ProductDTO>(_mapper.Map<ProductDTO>(product));
+        }
+
+        public async  Task<ResultService> Update(ProductDTO productDTO)
+        {
+            if (productDTO == null) return ResultService.Fail("Product must be informed");
+            var validation = new ProductDTOValidator().Validate(productDTO);
+            if (!validation.IsValid) return ResultService.RequestError("Validation problems", validation);
+            var product = await _repository.FindById(productDTO.Id);
+            if (product == null) return ResultService.Fail("Product not found");
+            product = _mapper.Map<ProductDTO,Product>(productDTO,product);
+            await _repository.Update(product);
+            return ResultService.Ok("Product edited successfull");
         }
     }
 }
