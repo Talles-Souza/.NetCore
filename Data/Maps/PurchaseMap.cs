@@ -15,10 +15,10 @@ namespace Data.Maps
             builder.ToTable("purchases");
             builder.HasKey(x => x.Id);
 
-            builder.Property(x => x.Id).HasColumnName("idpuerchase").UseIdentityColumn();
+            builder.Property(x => x.Id).HasColumnName("idpurchase").UseIdentityColumn();
             builder.Property(x => x.PersonId).HasColumnName("idperson");
             builder.Property(x => x.ProductId).HasColumnName("idproduct");
-            builder.Property(x => x.Date).HasColumnName("datapurchase");
+            builder.Property(x => x.Date).HasColumnType("date").HasColumnName("datepurchase");
 
             //como estamos na claase "compra" começamos pelos atributos que estao dentro
             builder.HasOne(x => x.Person).WithMany(x=>x.Purchases); 

@@ -22,9 +22,10 @@ namespace IoC
         }
         public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddAutoMapper(typeof(DomainToDtoMapping));
+            services.AddAutoMapper(typeof(DomainToDtoMapping)); 
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IPurchaseService, PurchaseService>();
             return services;
 
         }

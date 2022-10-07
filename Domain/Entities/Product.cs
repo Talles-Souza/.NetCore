@@ -18,7 +18,7 @@ namespace Domain.Entities
         }
         public Product(int id, string name, string cod, decimal price)
         {
-            DomainValidationException.When(id < 0, "Id must be greater than zero");
+            DomainValidationException.When(id <=0, "Id must be greater than zero");
             Id = id;
             Validation(name, cod, price);
             Purchases = new List<Purchase>();

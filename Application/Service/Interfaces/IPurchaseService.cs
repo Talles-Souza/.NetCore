@@ -9,6 +9,6 @@ namespace Application.Service.Interfaces
 {
     public interface IPurchaseService
     {
-        Task<ResultService<PurchasesDTO>> Create(PurchasesDTO purchasesDTO);
+        Task<ResultService<PurchaseDTO>> Create(PurchaseDTO purchasesDTO);
     }
 }

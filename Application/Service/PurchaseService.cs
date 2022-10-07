@@ -23,17 +23,17 @@ namespace Application.Service
             this.purchaseRepository = purchaseRepository;
         }
 
-        public async Task<ResultService<PurchasesDTO>> Create(PurchasesDTO purchasesDTO)
+        public async Task<ResultService<PurchaseDTO>> Create(PurchaseDTO purchaseDTO)
         {
-            if (purchasesDTO == null) return ResultService.Fail<PurchasesDTO>("Purchase must be informed");
-            var validate =  new PurchasesDTOValidator().Validate(purchasesDTO);
-            if (!validate.IsValid) return ResultService.RequestError<PurchasesDTO>("Validation problems", validate);
-            var productId = await productRepository.FindByIdCod(purchasesDTO.Cod);
-            var personId = await personRepository.FindByIdDocument(purchasesDTO.Document);
+            if (purchaseDTO == null) return ResultService.Fail<PurchaseDTO>("Purchase must be informed");
+            var validate =  new PurchasesDTOValidator().Validate(purchaseDTO);
+            if (!validate.IsValid) return ResultService.RequestError<PurchaseDTO>("Validation problems", validate);
+            var productId = await productRepository.FindByIdCod(purchaseDTO.Cod);
+            var personId = await personRepository.FindByIdDocument(purchaseDTO.Document);
             var purchase = new Purchase(productId,personId);
             var data = await purchaseRepository.Create(purchase);
-            purchasesDTO.Id = data.Id;
-            return ResultService.Ok<PurchasesDTO>(purchasesDTO);
+            purchaseDTO.Id = data.Id;
+            return ResultService.Ok<PurchaseDTO>(purchaseDTO);
         }
     }
 }

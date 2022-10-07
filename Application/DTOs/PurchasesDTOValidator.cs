@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Application.DTOs
 {
-    public class PurchasesDTOValidator :AbstractValidator <PurchasesDTO>    
+    public class PurchasesDTOValidator :AbstractValidator <PurchaseDTO>    
     {
         public PurchasesDTOValidator()
         {
