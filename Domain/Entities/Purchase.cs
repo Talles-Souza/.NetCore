@@ -20,7 +20,7 @@ namespace Domain.Entities
             Validation(ProductId, PersonId);
         } public Purchase(int id ,int productId, int personId)
         {
-            DomainValidationException.When(id < 0, "Id must be informed");
+            DomainValidationException.When(id <= 0, "Id must be informed");
             Id = id;
             Validation(ProductId, PersonId);
         }
@@ -28,8 +28,8 @@ namespace Domain.Entities
 
         private void Validation(int productId, int personId)
         {
-            DomainValidationException.When(productId<0, "Product id must be informed");
-            DomainValidationException.When(personId <0, "Person id must be informed");
+            DomainValidationException.When(productId<=0, "Product id must be informed");
+            DomainValidationException.When(personId <=0, "Person id must be informed");
             //DomainValidationException.When(!date.HasValue, "Purchase date must be informed");
 
            ProductId = productId;

@@ -1,16 +1,17 @@
 ﻿using Data.Context;
 using Domain.Entities;
+using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Data.Repositories
 {
-    internal class PurchaseRepository
+    public class PurchaseRepository : IPurchaseRepository
     {
         private readonly ContextDb _db;
 
-        public PurchaseRepository(ContextDb db)
+        public PurchaseRepository(ContextDb context)
         {
-            _db = db;
+            _db = context;
         }
 
         public async Task<Purchase> Create(Purchase purchase)
