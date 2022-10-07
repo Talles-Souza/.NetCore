@@ -1,4 +1,5 @@
-﻿using Data.Context;
+﻿
+using Data.Context;
 using Domain.Entities;
 using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
@@ -55,6 +56,11 @@ namespace Data.Repositories
                 return false;
             }
 
+        }
+
+        public async Task<int> FindByIdDocument(string document)
+        {
+            return (await _db.People.FirstOrDefaultAsync(x => x.Document == document))?.Id ?? 0;
         }
     }
 }

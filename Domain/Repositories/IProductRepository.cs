@@ -14,6 +14,7 @@ namespace Domain.Repositories
         Task<Product> Create(Product product);
         Task<Product> Update(Product product);
         Task<bool> Delete(int id);
+        Task<int> FindByIdCod(string cod);
 
 
     }

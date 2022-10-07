@@ -53,6 +53,12 @@ namespace Data.Repositories
                 return false;
             }
         }
-       
+
+        // ele vai procurar no banco um copdigo, se ele acha o codigo, vai retornar o id do produto que
+        // possui o codigo, se nao ele retorna 0
+        public async Task<int> FindByIdCod(string cod)
+        {
+            return (await _db.Product.FirstOrDefaultAsync(x => x.Cod == cod))?.Id ?? 0;
+        }
     }
 }
