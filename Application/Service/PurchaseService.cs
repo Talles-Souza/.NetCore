@@ -48,17 +48,17 @@ namespace Application.Service
 
         }
 
-        public async Task<ResultService<ICollection<PuchateDetailDTO>>> FindByAllAsync()
+        public async Task<ResultService<ICollection<PurchaseDetailDTO>>> FindByAllAsync()
         {
             var purchases = await purchaseRepository.FindByAll();
-            return ResultService.Ok(mapper.Map<ICollection<PuchateDetailDTO>>(purchases));
+            return ResultService.Ok(mapper.Map<ICollection<PurchaseDetailDTO>>(purchases));
         }
 
-        public async Task<ResultService<PuchateDetailDTO>> FindByIdAsync(int id)
+        public async Task<ResultService<PurchaseDetailDTO>> FindByIdAsync(int id)
         {
             var purchase = await purchaseRepository.FindById(id);
-            if (purchase == null) return ResultService.Fail<PuchateDetailDTO>("Purchase not found");
-            return ResultService.Ok(mapper.Map<PuchateDetailDTO>(purchase));
+            if (purchase == null) return ResultService.Fail<PurchaseDetailDTO>("Purchase not found");
+            return ResultService.Ok(mapper.Map<PurchaseDetailDTO>(purchase));
              
         }
 
@@ -71,7 +71,7 @@ namespace Application.Service
             if (purchase == null) return ResultService.Fail<PurchaseDTO>("Purchase not found");
             var productId = await productRepository.FindByIdCod(purchaseDTO.Cod);
             var personId = await personRepository.FindByIdDocument(purchaseDTO.Document);
-            purchase.Edit(purchase.Id,productId,personId);
+            purchase.Edit(purchase.Id, productId, personId);
             await purchaseRepository.Update(purchase);
             return ResultService.Ok(purchaseDTO); 
         }

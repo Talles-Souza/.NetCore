@@ -7,7 +7,7 @@ namespace Domain.Repositories
         Task<Purchase> FindById(int id);
         Task<ICollection<Purchase>> FindByAll();
         Task<Purchase> Create(Purchase purchase);
-        Task Update(Purchase purchase);
+        Task<Purchase> Update(Purchase purchase);
         Task Delete(Purchase purchase);
         Task<ICollection<Purchase>> FindByPersonId(int personId);
         Task<ICollection<Purchase>> FindByProductId(int productId);

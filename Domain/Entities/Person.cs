@@ -39,6 +39,10 @@ namespace Domain.Entities
             Document = document;
             Phone = phone;  
         }
+        public override string? ToString()
+        {
+            return $"{Id}";
+        }
 
     }
 }

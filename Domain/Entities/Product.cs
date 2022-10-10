@@ -18,7 +18,7 @@ namespace Domain.Entities
         }
         public Product(int id, string name, string cod, decimal price)
         {
-            DomainValidationException.When(id <=0, "Id must be greater than zero");
+            DomainValidationException.When(id <0, "Id must be greater than zero");
             Id = id;
             Validation(name, cod, price);
             Purchases = new List<Purchase>();
@@ -34,6 +34,11 @@ namespace Domain.Entities
             Name = name;
             Cod = cod;
             Price = price;
+        }
+
+        public override string? ToString()
+        {
+            return $"{Id}";
         }
     }
 }

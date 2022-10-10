@@ -14,7 +14,7 @@ namespace Domain.Entities
         public Person Person { get; set; }
         public Product Product { get; set; }
 
-
+        
         public Purchase(int productId, int personId)
         {
             Validation(productId, personId);
@@ -23,13 +23,13 @@ namespace Domain.Entities
         {
             DomainValidationException.When(id <= 0, "Id must be informed");
             Id = id;
-            Validation(ProductId, PersonId);
+            Validation(productId, personId);
         } 
         public void Edit(int id ,int productId, int personId)
         {
             DomainValidationException.When(id <= 0, "Id must be informed");
             Id = id;
-            Validation(ProductId, PersonId);
+            Validation(productId, personId);
         }
 
 

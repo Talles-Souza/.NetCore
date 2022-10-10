@@ -27,10 +27,11 @@ namespace Data.Repositories
             await _db.SaveChangesAsync();
         }
 
-        public async Task Update(Purchase purchase)
+        public async Task<Purchase> Update(Purchase purchase)
         {
             _db.Update(purchase);
             await _db.SaveChangesAsync();
+            return purchase;
         }
 
         public async Task<Purchase> FindById(int id)
@@ -69,5 +70,7 @@ namespace Data.Repositories
                             .Include(x => x.Person)
                             .ToListAsync();
         }
+
+      
     }
 }
