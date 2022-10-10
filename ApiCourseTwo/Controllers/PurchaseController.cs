@@ -32,5 +32,23 @@ namespace ApiCourseTwo.Controllers
             }
             
         }
+        [HttpGet]
+        public async Task<ActionResult> FindByAllAsync()
+        {
+          
+                var result = await _purchaseService.FindByAllAsync();
+                if (result.IsSuccess) return Ok(result);
+                return BadRequest(result);            
+           
+        }
+        [HttpGet("{id}")]
+        public async Task<ActionResult> FindByIdAsync(int id)
+        {
+          
+                var result = await _purchaseService.FindByIdAsync(id);
+                if (result.IsSuccess) return Ok(result);
+                return BadRequest(result);            
+           
+        }
     }
 }

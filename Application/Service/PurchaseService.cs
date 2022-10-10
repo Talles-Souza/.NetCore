@@ -1,5 +1,6 @@
 ﻿using Application.DTOs;
 using Application.Service.Interfaces;
+using AutoMapper;
 using Domain.Entities;
 using Domain.Repositories;
 using System;
@@ -15,12 +16,14 @@ namespace Application.Service
         private readonly IProductRepository productRepository;
         private readonly IPersonRepository personRepository;
         private readonly IPurchaseRepository purchaseRepository;
+        private readonly IMapper mapper;
 
-        public PurchaseService(IProductRepository productRepository, IPersonRepository personRepository, IPurchaseRepository purchaseRepository)
+        public PurchaseService(IProductRepository productRepository, IPersonRepository personRepository, IPurchaseRepository purchaseRepository, IMapper mapper)
         {
             this.productRepository = productRepository;
             this.personRepository = personRepository;
             this.purchaseRepository = purchaseRepository;
+            this.mapper = mapper;
         }
 
         public async Task<ResultService<PurchaseDTO>> Create(PurchaseDTO purchaseDTO)
@@ -36,14 +39,41 @@ namespace Application.Service
             return ResultService.Ok<PurchaseDTO>(purchaseDTO);
         }
 
-        public Task<ResultService<ICollection<PuchateDetailDTO>>> FindByAllAsync()
+        public async Task<ResultService> Delete(int id)
         {
-            throw new NotImplementedException();
+            var purchase = await purchaseRepository.FindById(id);
+            if (purchase == null) return ResultService.Fail($"Purchase {id} not found");
+           await purchaseRepository.Delete(purchase);
+            return ResultService.Ok($"Purchase {id} successfully deleted ");
+
         }
 
-        public Task<ResultService<PuchateDetailDTO>> FindByIdAsync(int id)
+        public async Task<ResultService<ICollection<PuchateDetailDTO>>> FindByAllAsync()
         {
-            throw new NotImplementedException();
+            var purchases = await purchaseRepository.FindByAll();
+            return ResultService.Ok(mapper.Map<ICollection<PuchateDetailDTO>>(purchases));
+        }
+
+        public async Task<ResultService<PuchateDetailDTO>> FindByIdAsync(int id)
+        {
+            var purchase = await purchaseRepository.FindById(id);
+            if (purchase == null) return ResultService.Fail<PuchateDetailDTO>("Purchase not found");
+            return ResultService.Ok(mapper.Map<PuchateDetailDTO>(purchase));
+             
+        }
+
+        public async Task<ResultService<PurchaseDTO>> Update(PurchaseDTO purchaseDTO)
+        {
+            if (purchaseDTO == null) return ResultService.Fail<PurchaseDTO>("object must be informed");
+            var result = new PurchasesDTOValidator().Validate(purchaseDTO);
+            if (!result.IsValid) return ResultService.RequestError<PurchaseDTO>("Validation problems", result);
+            var purchase = await purchaseRepository.FindById(purchaseDTO.Id);
+            if (purchase == null) return ResultService.Fail<PurchaseDTO>("Purchase not found");
+            var productId = await productRepository.FindByIdCod(purchaseDTO.Cod);
+            var personId = await personRepository.FindByIdDocument(purchaseDTO.Document);
+            purchase.Edit(purchase.Id,productId,personId);
+            await purchaseRepository.Update(purchase);
+            return ResultService.Ok(purchaseDTO); 
         }
     }
 }

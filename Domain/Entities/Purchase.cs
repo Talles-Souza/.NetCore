@@ -18,7 +18,14 @@ namespace Domain.Entities
         public Purchase(int productId, int personId)
         {
             Validation(productId, personId);
-        } public Purchase(int id ,int productId, int personId)
+        } 
+        public Purchase(int id ,int productId, int personId)
+        {
+            DomainValidationException.When(id <= 0, "Id must be informed");
+            Id = id;
+            Validation(ProductId, PersonId);
+        } 
+        public void Edit(int id ,int productId, int personId)
         {
             DomainValidationException.When(id <= 0, "Id must be informed");
             Id = id;
