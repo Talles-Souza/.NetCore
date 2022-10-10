@@ -10,5 +10,7 @@ namespace Application.Service.Interfaces
     public interface IPurchaseService
     {
         Task<ResultService<PurchaseDTO>> Create(PurchaseDTO purchasesDTO);
+        Task<ResultService<PuchateDetailDTO>> FindByIdAsync(int id);
+        Task<ResultService<ICollection<PuchateDetailDTO>>> FindByAllAsync();  
     }
 }

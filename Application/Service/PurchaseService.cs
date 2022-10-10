@@ -35,5 +35,15 @@ namespace Application.Service
             purchaseDTO.Id = data.Id;
             return ResultService.Ok<PurchaseDTO>(purchaseDTO);
         }
+
+        public Task<ResultService<ICollection<PuchateDetailDTO>>> FindByAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<ResultService<PuchateDetailDTO>> FindByIdAsync(int id)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
