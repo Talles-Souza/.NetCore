@@ -18,6 +18,7 @@ namespace IoC
             services.AddScoped<IPersonRepository, PersonRepository>();
             services.AddScoped<IProductRepository,ProductRepository>();
             services.AddScoped<IPurchaseRepository, PurchaseRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             return services;
         }
         public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
