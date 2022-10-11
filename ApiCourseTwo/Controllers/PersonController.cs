@@ -1,6 +1,7 @@
 ﻿using Application.DTOs;
 using Application.Service;
 using Application.Service.Interfaces;
+using Domain.FiltersDb;
 using Domain.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -55,6 +56,13 @@ namespace ApiCourseTwo.Controllers
         public async Task<ActionResult> Delete(int id)
         {
             var result = await _personService.Delete (id);
+            if (result.IsSuccess) return Ok(result);
+            return BadRequest(result);
+        }
+        [HttpGet("paged")]
+        public async Task<ActionResult> FindPaged([FromQuery] PersonFilterDb personFilterDb)
+        {
+            var result = await _personService.FindPaged(personFilterDb);
             if (result.IsSuccess) return Ok(result);
             return BadRequest(result);
         }

@@ -2,6 +2,7 @@
 using Application.Service.Interfaces;
 using AutoMapper;
 using Domain.Entities;
+using Domain.FiltersDb;
 using Domain.Repositories;
 using System;
 
@@ -49,6 +50,14 @@ namespace Application.Service
             var person = await _personRepository.FindById(id);
             if (person == null) return ResultService.Fail<PersonDTO>("Person not found");
             return ResultService.Ok(_mapper.Map<PersonDTO>(person));
+        }
+
+        public async Task<ResultService<PagedResponseDTO<PersonDTO>>> FindPaged(PersonFilterDb personFilterDb)
+        {
+           var peoplePaged =  await _personRepository.FindPage(personFilterDb);
+        var result = new PagedResponseDTO<PersonDTO>(peoplePaged.TotalPages,_mapper.
+            Map<List<PersonDTO>>(peoplePaged.Data));
+            return ResultService.Ok(result);
         }
 
         public async Task<ResultService<PersonDTO>> Update(PersonDTO personDTO)
