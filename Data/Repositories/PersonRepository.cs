@@ -1,6 +1,7 @@
 ﻿
 using Data.Context;
 using Domain.Entities;
+using Domain.FiltersDb;
 using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -61,6 +62,14 @@ namespace Data.Repositories
         public async Task<int> FindByIdDocument(string document)
         {
             return (await _db.People.FirstOrDefaultAsync(x => x.Document == document))?.Id ?? 0;
+        }
+
+        public async Task<PagedBaseResponse<Person>> FindPage(PersonFilterDb request)
+        {
+            var people = _db.People.AsQueryable();
+            if (!string.IsNullOrEmpty(request.Name)) 
+                people = people.Where(x=>x.Name.Contains(request.Name));
+            return await PagedBaseResponseHelper.GetResponseAsync<PagedBaseResponse<Person>, Person>(people, request);
         }
     }
 }

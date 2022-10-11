@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using Domain.FiltersDb;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace Domain.Repositories
         Task<Person> Update(Person person);
         Task<bool> Delete(int id);
         Task<int> FindByIdDocument(string document);
+        Task<PagedBaseResponse<Person>> FindPage(PersonFilterDb request);
+
 
     }
 }
