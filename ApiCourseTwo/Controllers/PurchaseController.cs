@@ -2,10 +2,12 @@
 using Application.Service;
 using Application.Service.Interfaces;
 using Domain.Validations;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiCourseTwo.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PurchaseController : ControllerBase

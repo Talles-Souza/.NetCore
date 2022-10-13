@@ -1,6 +1,7 @@
 using IoC;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System.Text;
 using System.Text.Json.Serialization;
 
@@ -10,7 +11,43 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(c =>
+{
+    c.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title="Api Dotnet 6",
+        Version ="v1",
+        Description="Criando uma api em dotnet 6"
+    });
+    c.AddSecurityDefinition("Bearer",new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
+        Description = @"Authentication with JWT .
+                                    Ex: Bearer {token}",
+        Name = "Authorization",
+        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        Scheme ="Bearer"
+    });
+    c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement()
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+             Reference = new OpenApiReference
+             {
+                 Type= ReferenceType.SecurityScheme,
+                 Id="Bearer"
+             },
+             Scheme = "oauth2",
+             Name = "Bearer",
+             In = ParameterLocation.Header
+            },
+            new List<string>()
+        }
+    });
+});
+
+
+
 builder.Services.AddInfrastruture(builder.Configuration);
 builder.Services.AddServices(builder.Configuration);
 builder.Services.AddMvc().AddJsonOptions(options =>
@@ -48,12 +85,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseRouting();
 app.UseAuthentication();
 app.UseAuthorization();
-app.UseRouting();
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-});
-
+app.MapControllers();
 app.Run();
