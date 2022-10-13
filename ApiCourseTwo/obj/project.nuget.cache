@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "PfzukBtFtdfbNYK/kG5gEfRdr8TggC/OGbJxxJl4GpjIgoWv1cgpyy7p6Obz7NhkgP1jAauc3Phg7FymnxQ9wA==",
+  "dgSpecHash": "iesntLGnCekLPyifnEoKvVfTdhO35V4UfsgyWAU/Ngf7LclCyqs5Q6zTSn9ffxELjOq0aGXvXghfyd9snFWkBg==",
   "success": true,
   "projectFilePath": "C:\\C#\\ApiCourseTwo\\ApiCourseTwo\\ApiCourseTwo.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\talles\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\fluentvalidation\\11.2.2\\fluentvalidation.11.2.2.nupkg.sha512",
+    "C:\\Users\\talles\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.10\\microsoft.aspnetcore.authentication.jwtbearer.6.0.10.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.9\\microsoft.entityframeworkcore.6.0.9.nupkg.sha512",

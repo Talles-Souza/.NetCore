@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MWjN0PcAH7zgdKT570O/mp0Bbc/PNVas6iD6eWGTsaeDmb9402eClWKtk+op0iN8qDnca+wLfnekA0aXBDz2ow==",
+  "dgSpecHash": "L8TRVrn5HZUeHR+CJ+npeVxmF9WU5lr/araTg6jdIJkqi68iRFmyTTdKGa6F2PjNYwDYCw7wLP4KEWuR5FrdrA==",
   "success": true,
   "projectFilePath": "C:\\C#\\ApiCourseTwo\\Data\\Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\talles\\.nuget\\packages\\azure.core\\1.25.0\\azure.core.1.25.0.nupkg.sha512",
+    "C:\\Users\\talles\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.10\\microsoft.aspnetcore.authentication.jwtbearer.6.0.10.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\talles\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.9\\microsoft.entityframeworkcore.6.0.9.nupkg.sha512",
