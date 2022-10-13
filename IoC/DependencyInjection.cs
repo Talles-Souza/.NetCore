@@ -21,7 +21,7 @@ namespace IoC
             services.AddScoped<IProductRepository,ProductRepository>();
             services.AddScoped<IPurchaseRepository, PurchaseRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-            services.AddScoped<ITokenGenerator, TokenGenarator>();
+            services.AddScoped<ITokenGenerator, TokenGenerator>();
             services.AddScoped<IUserRepository, UserRepository>();
 
             return services;

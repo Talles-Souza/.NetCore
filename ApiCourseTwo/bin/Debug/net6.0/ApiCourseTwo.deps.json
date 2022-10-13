@@ -9,7 +9,8 @@
       "ApiCourseTwo/1.0.0": {
         "dependencies": {
           "IoC": "1.0.0",
-          "Swashbuckle.AspNetCore": "6.2.3"
+          "Swashbuckle.AspNetCore": "6.2.3",
+          "System.IdentityModel.Tokens.Jwt": "6.23.1"
         },
         "runtime": {
           "ApiCourseTwo.dll": {}

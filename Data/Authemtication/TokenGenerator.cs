@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Data.Authemtication
 {
-    public class TokenGenarator : ITokenGenerator
+    public class TokenGenerator : ITokenGenerator
     {
         public dynamic Generator(User user)
         {
@@ -22,9 +22,9 @@ namespace Data.Authemtication
 
             };
             var expires = DateTime.Now.AddDays(1);
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("projetodotnet"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("vgçjdmsfklgnldsanfgknsdlnglksadngnasldngklasdn"));
             var tokenData = new JwtSecurityToken(
-                signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha256Signature),
+                signingCredentials: new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature),
             expires: expires,
             claims: claims
                 );
