@@ -7,6 +7,8 @@ using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Data.Authemtication;
+using Domain.Authentication;
 
 namespace IoC
 {
@@ -19,6 +21,9 @@ namespace IoC
             services.AddScoped<IProductRepository,ProductRepository>();
             services.AddScoped<IPurchaseRepository, PurchaseRepository>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<ITokenGenerator, TokenGenarator>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
             return services;
         }
         public static IServiceCollection AddServices(this IServiceCollection services, IConfiguration configuration)
@@ -27,6 +32,7 @@ namespace IoC
             services.AddScoped<IPersonService, PersonService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IPurchaseService, PurchaseService>();
+            services.AddScoped<IUserService, UserService>();    
             return services;
 
         }
