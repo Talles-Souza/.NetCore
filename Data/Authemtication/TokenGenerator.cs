@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace Data.Authemtication
 {
-    internal class TokenGenarator : ITokenGenerator
+    public class TokenGenarator : ITokenGenerator
     {
         public dynamic Generator(User user)
         {
